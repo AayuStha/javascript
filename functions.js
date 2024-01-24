@@ -157,3 +157,24 @@
 // d.myMet();
 // var monthname = d.myProp;
 // console.log(monthname);
+
+
+function student (id, name , address, phone){
+    this.id = id;
+    this.name = name;
+    this.address = address;
+    this. phone= phone;
+}
+studentOne = new student (1,"Aayush","Lubhu",9864673159 );
+studentTwo = new student (1,"Mayank","Imadol",9864673159 );
+console.log (studentOne.phone);
+console.log (studentTwo.phone);
+
+delete studentOne.phone;
+delete studentTwo.phone;
+
+
+console.log (studentOne.phone);
+console.log (studentTwo.phone);
+
+

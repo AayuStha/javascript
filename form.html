@@ -5,14 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<script type="text/javascript">
-    function msg(){
-        alert("Hello World");
-    }
-</script>
+    <script src="form.js"></script>
 <body>
     <form action="">
+        <hr>
         <input type="button" value="click" onclick="msg()"/> 
+        <hr>
+        Enter No: <input type="text" id="number" name="number"/><br>
+        <input type="button" value="cube" onclick="getcube()"/>
+        <hr>
+        Male: <input type="radio" name="gender" value="male">
+        Female: <input type="radio" name="gender" value="female">
+        <input type="button" onclick="totalelements()" value = "Total Genders">
+        <hr>
+        <p>This is a paragraph</p>
+        <p>Here we are going to count total number of paragraphs by getElementByTagName() method</p>
+        <p>Let's see the simple examples</p>
+        <button onclick="countpara()"> COunt Paragraph</button>
+        <hr>
+    </form>
+    <div class="xyz">
+        <button onclick="countClass()"> COunt Class</button>
+    </div>
+    <div class="xyz">
+        <button onclick="countClass()"> COunt Class</button>
+    </div>
+    <hr>
+    <form action="myForm">
+        <input type="button" value="comment" onclick="showcommentform()">
+        <div id="mylocate"></div>
+    </form>
+    <hr>    
+    <form name="myForm">
+        <input type="password" value="" name="userPass" onkeyup="validate()">
+        Strength: <span id="mylocation" onclick="clickSpan()"> no strength</span>
     </form>
 </body>
 </html>
