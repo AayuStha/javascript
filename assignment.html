@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Form</title>
+    </head>
+    <body>
+        <form name="myForm">
+            Username:
+            <input name="email" required/> <br> <br>
+
+            Password:
+            <input type="password" name="password" required/> <br> <br>
+
+            <input type="button" value="Submit"  onclick="validateForm()"/>
+        </form>
+
+        <script>
+            function validateForm(){
+                var inputEmail = document.myForm.email.value;
+                var inputPassword = document.myForm.password.value;
+
+                var validEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if(!validEmail.test(inputEmail)){
+                    alert("Please enter a valid email!");
+                    return;
+                }
+
+                var validPassword = /^(?=.*[0-9])(?=.*[!@#$%^&*])(.{8,})$/;
+                if(!validPassword.test(inputPassword)){
+                    alert("Enter a valid password.");
+                    return;
+                }
+
+                alert("Successfully submitted!");
+            }
+
+        </script>
+    </body>
+</html>
