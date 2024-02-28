@@ -13,7 +13,13 @@ else{
     echo'Connected successfully<br/>';
 }
 
-$sql= 'INSERT INTO emp5(name,emp_salary) VALUES ("sonoo", 9000)';
+$sql= 'INSERT INTO emp5(name,emp_salary) 
+        VALUES 
+        ("Aayush", 90000),
+        ("Sakshi", 30000),
+        ("Ironman", 10000),
+        ("Wanda", 3000)';
+
 if (mysqli_query($conn, $sql)) {
     echo "Record inserted successfully";
 } else {

@@ -4,6 +4,11 @@ $username = "admin";
 $password = "pass";
 $database = "php_mysql";
 
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+
 $conn = mysqli_connect($server, $username, $password, $database);
 
 if (!$conn) {
@@ -12,8 +17,14 @@ if (!$conn) {
 else {
     echo 'Connected successfully<br/>';
 }
-$sql = "SELECT * FROM emp5";
-$result = mysqli_query($conn, $sql);
+
+$sql = "SELECT * FROM emp5 WHERE emp_salary < ?";
+$stmt = mysqli_prepare($conn, $sql);
+mysqli_stmt_bind_param($stmt, "i", $salary);
+$salary = 20000;
+mysqli_stmt_execute($stmt);
+$result = mysqli_stmt_get_result($stmt);
+
 if (mysqli_num_rows($result) > 0) {
     echo "<table border=1 cellpadding= 10 cellspacing=10 >";
     echo "<tr>";
@@ -37,4 +48,3 @@ if (mysqli_num_rows($result) > 0) {
 
 
 mysqli_close($conn);
-?>
